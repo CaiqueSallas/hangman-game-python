@@ -70,6 +70,83 @@ def initialize(word):
             shadow_word])
 
 
+def reset_screen(tries, shadow_word):
+    clear()
+
+    tab = ' ' * 4
+
+    if tries == 6:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                tab * 2 + '    |',
+                tab * 2 + '    |',
+                tab * 2 + '    |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 5:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                tab * 2 + '    |',
+                tab * 2 + '    |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 4:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                ' | ' + tab * 2 + ' |',
+                tab * 2 + '    |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 3:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                '/| ' + tab * 2 + ' |',
+                tab * 2 + '    |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 2:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                '/|\\' + tab * 2 + ' |',
+                tab * 2 + '    |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 1:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                '/|\\ ' + tab * 2 + '|',
+                '/' + tab * 2 + '   |',
+                '',
+                '',
+                shadow_word])
+    elif tries == 0:
+        boxing(36, 15,
+               ['Jogo Da Forca!!!',
+                '  _' * 4,
+                ' 0' + tab * 2 + '  |',
+                '/|\\ ' + tab * 2 + ' |',
+                '/ \\' + tab * 2 + '  |',
+                '',
+                '',
+                shadow_word])
+
+
 def sort_word():
     words = [''] * 5
     words[0] = 'Computer'
@@ -80,10 +157,18 @@ def sort_word():
     return random.choice(words)
 
 
+def ask_word():
+    guess = str(input('Faça um palpite: '))
+
+    clear()
+    return 1
+
+
 def start():
     word = sort_word()
 
     initialize(word)
+    guess = ask_word()
 
 start()
 input()
