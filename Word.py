@@ -3,10 +3,10 @@ from random import choice
 
 class Word:
     WORDS = [
-        'COMPUTER TER',
-        'MOUSE CABLE',
-        'KEY BOARD',
-        'MOTHER BOARD',
+        'COMPUTER',
+        'MOUSE',
+        'KEYBOARD',
+        'MOTHERBOARD',
         'MOUSE PAD',
     ]
 
